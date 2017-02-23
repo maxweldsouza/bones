@@ -1,6 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extractSass = new ExtractTextPlugin({
+    filename: '[name].[contenthash].css',
+    disable: false,
+});
 
 module.exports = {
     entry: './src/index.js',
@@ -10,13 +16,17 @@ module.exports = {
                 test: /\.js$/, use: 'babel-loader',
             },
             {
-                test: /\.scss$/, use: [{
-                    loader: 'style-loader', // creates style nodes from JS strings
-                }, {
-                    loader: 'css-loader', // translates CSS into CommonJS
-                }, {
-                    loader: 'sass-loader', // compiles Sass to CSS
-                }],
+                test: /\.scss$/,
+                use: extractSass.extract({
+                    loader: [{
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader: 'sass-loader',
+                    }],
+                    // use style-loader in development
+                    fallbackLoader: 'style-loader',
+                }),
             },
         ],
     },
@@ -34,5 +44,6 @@ module.exports = {
             title: 'My App',
             template: 'src/index.html',
         }),
+        extractSass,
     ],
 };
