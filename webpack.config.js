@@ -5,14 +5,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/, use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015', 'react'],
-                    },
-                },
-            }
-        ]
+                test: /\.js$/, use: 'babel-loader',
+            },
+        ],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
