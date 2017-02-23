@@ -46,7 +46,8 @@ module.exports = {
             },
             comments: false,
         }),
-		new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
+            // https://github.com/kangax/html-minifier#options-quick-reference
             title: 'My App',
             template: 'src/index.html',
             minify: {
@@ -57,6 +58,6 @@ module.exports = {
                 useShortDoctype: true,
             },
         }),
-		extractSass,
-    ]
+        extractSass,
+    ],
 };
