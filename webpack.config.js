@@ -9,6 +9,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
     entry: './src/index.js',
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -19,13 +20,15 @@ module.exports = {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     loader: [{
-                        loader: 'css-loader',
+                        loader: 'css-loader', options: {
+                            sourceMap: true,
+                        },
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: 'sass-loader', options: {
+                            sourceMap: true,
+                        },
                     }],
-                    // use style-loader in development
-                    fallbackLoader: 'style-loader',
                 }),
             },
         ],
