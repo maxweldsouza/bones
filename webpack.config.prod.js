@@ -5,12 +5,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: 'css/[name].[hash].css',
+    filename: 'css/[name]-[contenthash:6].css',
     disable: false,
 });
 
 module.exports = {
     entry: './src/index.js',
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -22,16 +23,20 @@ module.exports = {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     loader: [{
-                        loader: 'css-loader',
+                        loader: 'css-loader', options: {
+                            sourceMap: true,
+                        },
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: 'sass-loader', options: {
+                            sourceMap: true,
+                        },
                     },
                     {
-                        loader: 'postcss-loader',
+                        loader: 'postcss-loader', options: {
+                            sourceMap: true,
+                        },
                     }],
-                    // use style-loader in development
-                    fallbackLoader: 'style-loader',
                 }),
             },
         ],
@@ -39,12 +44,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist/assets'),
         publicPath: '/assets/',
-        filename: 'js/bundle.[hash].js',
+        filename: 'js/bundle-[chunkhash:6].js',
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
+            sourceMap: true,
             mangle: {
                 screw_ie8: true,
                 keep_fnames: true,
