@@ -11,8 +11,10 @@
     "babel-register": "^6.23.0",
     "clean-webpack-plugin": "^0.1.15",
     "eslint": "^3.16.1",
+    "eslint-loader": "^1.6.3",
     "eslint-plugin-react": "^6.10.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.10.0",
     "flow-bin": "^0.39.0",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.0",
@@ -24,8 +26,6 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
-    "eslint-loader": "^1.6.3",
-    "file-loader": "^0.10.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
