@@ -15,6 +15,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                use: 'file-loader?name=[name]-[hash:6].[ext]&publicPath=assets/images/&outputPath=images/',
+            },
+            {
                 test: /\.js$/,
                 use: 'babel-loader',
                 exclude: [/node_modules/],

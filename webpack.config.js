@@ -13,6 +13,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                use: 'file-loader?name=[name].[ext]',
+            },
+            {
                 test: /\.js$/,
                 use: 'babel-loader',
             },
