@@ -41,7 +41,7 @@
     },
     "jest": {
         "moduleNameMapper": {
-            "^.*\\.(scss|svg)$": "<rootDir>/src/stubs/JestStub.js"
+            "^.*\\.(scss|svg)$": "<rootDir>/stubs/JestStub.js"
         }
     }
 }
