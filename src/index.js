@@ -10,8 +10,8 @@ const store = createStore(reducer);
 const render = () => {
     ReactDOM.render(
         <App
-            count={store.getState()}
-            onClick={() => store.dispatch({ type: 'INCREMENT' })}/>,
+            todos={store.getState()}
+            onClick={text => store.dispatch({ type: 'ADD_TODO', text })}/>,
             document.getElementById('root')
         );
 };

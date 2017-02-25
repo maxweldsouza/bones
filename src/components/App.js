@@ -6,7 +6,16 @@ import './App.scss';
 class App extends Component {
     constructor (props) {
         super(props);
-        this.state = { count: 0 };
+        this.state = { text: '' };
+        this.onTextChange = this.onTextChange.bind(this);
+        this.onClick = this.onClick.bind(this);
+    }
+    onTextChange (e) {
+        this.setState({ text: e.target.value });
+    }
+    onClick () {
+        this.setState({ text: '' });
+        this.props.onClick(this.state.text);
     }
     render () {
         return (
@@ -16,8 +25,11 @@ class App extends Component {
                     <h2>Welcome to React !</h2>
                 </div>
                 <p>
-                    This button has been clicked {this.props.count} times.
-                    <button onClick={this.props.onClick}>Click Me</button>
+                    {this.props.todos.map(todo => {
+                        return <div>{todo.text}</div>;
+                    })}
+                    <input type="text" onChange={this.onTextChange} value={this.state.text} />
+                    <button onClick={this.onClick}>Click Me</button>
                 </p>
             </div>
         );
