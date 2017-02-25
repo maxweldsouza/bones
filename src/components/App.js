@@ -1,22 +1,11 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.scss';
+import VisibleTodoList from '../containers/VisibleTodoList';
 
 class App extends Component {
-    constructor (props) {
-        super(props);
-        this.state = { text: '' };
-        this.onTextChange = this.onTextChange.bind(this);
-        this.onClick = this.onClick.bind(this);
-    }
-    onTextChange (e) {
-        this.setState({ text: e.target.value });
-    }
-    onClick () {
-        this.setState({ text: '' });
-        this.props.onClick(this.state.text);
-    }
     render () {
         return (
             <div className="App">
@@ -24,13 +13,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h2>Welcome to React !</h2>
                 </div>
-                <p>
-                    {this.props.todos.map(todo => {
-                        return <div>{todo.text}</div>;
-                    })}
-                    <input type="text" onChange={this.onTextChange} value={this.state.text} />
-                    <button onClick={this.onClick}>Click Me</button>
-                </p>
+                <VisibleTodoList />
             </div>
         );
     }
