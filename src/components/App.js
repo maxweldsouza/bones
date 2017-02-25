@@ -7,10 +7,6 @@ class App extends Component {
     constructor (props) {
         super(props);
         this.state = { count: 0 };
-        this.onClick = this.onClick.bind(this);
-    }
-    onClick () {
-        this.setState({ count: this.state.count + 1 });
     }
     render () {
         return (
@@ -20,8 +16,8 @@ class App extends Component {
                     <h2>Welcome to React !</h2>
                 </div>
                 <p>
-                    This button has been clicked {this.state.count} times.
-                    <button onClick={this.onClick}>Click Me</button>
+                    This button has been clicked {this.props.count} times.
+                    <button onClick={this.props.onClick}>Click Me</button>
                 </p>
             </div>
         );

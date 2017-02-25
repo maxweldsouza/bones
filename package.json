@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "redux": "^3.6.0"
   },
   "scripts": {
     "start": "webpack-dev-server --progress",
@@ -38,10 +39,10 @@
     "flow": "flow",
     "test": "jest",
     "eject": "react-scripts eject"
-    },
-    "jest": {
-        "moduleNameMapper": {
-            "^.*\\.(scss|svg)$": "<rootDir>/stubs/JestStub.js"
-        }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.*\\.(scss|svg)$": "<rootDir>/stubs/JestStub.js"
     }
+  }
 }
