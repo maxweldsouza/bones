@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 import Footer from './Footer';
 
 class App extends Component {
