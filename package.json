@@ -29,6 +29,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "css-loader": "^0.26.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -38,7 +39,7 @@
     "start": "webpack-dev-server --progress",
     "build": "webpack -p --config webpack.config.prod.js --define process.env.NODE_ENV='\"production\"' --progress --colors",
     "flow": "flow",
-    "test": "jest",
+    "test": "jest"
   },
   "jest": {
     "moduleNameMapper": {
