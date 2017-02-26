@@ -16,7 +16,7 @@ class App extends Component {
                 </div>
                 <p>
                     <AddTodo />
-                    <VisibleTodoList />
+                    <VisibleTodoList filter={this.props.params.filter || 'all'}/>
                     <Footer />
                 </p>
             </div>
