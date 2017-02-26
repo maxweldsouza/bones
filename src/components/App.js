@@ -1,9 +1,10 @@
 // @flow
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.scss';
-import VisibleTodoList from '../containers/VisibleTodoList';
+import AddTodo from './AddTodo';
+import VisibleTodoList from './VisibleTodoList';
+import Footer from './Footer';
 
 class App extends Component {
     render () {
@@ -13,7 +14,11 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h2>Welcome to React !</h2>
                 </div>
-                <VisibleTodoList />
+                <p>
+                    <AddTodo />
+                    <VisibleTodoList />
+                    <Footer />
+                </p>
             </div>
         );
     }
