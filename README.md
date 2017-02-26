@@ -9,3 +9,5 @@ Flow
 Jest
 PostCss
 Sass
+Webpack 2
+Redux
