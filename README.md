@@ -9,6 +9,7 @@ Flow
 Jest
 PostCss
 Sass
+Css Modules
 Webpack 2
 Redux
 Immutable.js
