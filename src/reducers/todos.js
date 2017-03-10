@@ -1,16 +1,15 @@
-const todo = (state = [], action) => {
+import Immutable from 'immutable';
+
+const todo = (state = Immutable.Map(), action) => {
     switch (action.type) {
     case 'TOGGLE_TODO':
-        if (state.id === action.id) {
-            return {
-                ...state,
-                completed: !state.completed
-            };
-        };
+        if (state.get('id') === action.id) {
+            return state.set('completed', !state.get('completed'));
+        }
         return state;
     default:
-        return state
-    };
+        return state;
+    }
 };
 
 const todos = (state = [], action) => {
@@ -18,15 +17,15 @@ const todos = (state = [], action) => {
     case 'ADD_TODO':
         return [
             ...state,
-            {
+            Immutable.Map({
                 id: action.id,
                 text: action.text,
                 completed: false
-            }
+            })
         ];
 
     case 'TOGGLE_TODO':
-        return state.map((item) => {
+        return state.map(item => {
             return todo(item, action);
         });
     default:
