@@ -12,18 +12,14 @@ const todo = (state = Immutable.Map(), action) => {
     }
 };
 
-const todos = (state = [], action) => {
+const todos = (state = Immutable.List(), action) => {
     switch (action.type) {
     case 'ADD_TODO':
-        return [
-            ...state,
-            Immutable.Map({
-                id: action.id,
-                text: action.text,
-                completed: false
-            })
-        ];
-
+        return state.push(Immutable.Map({
+            id: action.id,
+            text: action.text,
+            completed: false
+        }));
     case 'TOGGLE_TODO':
         return state.map(item => {
             return todo(item, action);
