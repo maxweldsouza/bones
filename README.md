@@ -1,7 +1,7 @@
 ### Bones
 
-This is a skeleton react project.
-It uses:
+This is a skeleton react project.  
+It uses:  
 
 Babel
 Eslint
@@ -11,3 +11,10 @@ PostCss
 Sass
 Webpack 2
 Redux
+
+To run:  
+`yarn install`  
+`npm start`  
+
+Go to:  
+`localhost:8000`  
