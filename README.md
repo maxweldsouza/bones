@@ -11,6 +11,7 @@ PostCss
 Sass
 Webpack 2
 Redux
+Immutable.js
 
 To run:  
 `yarn install`  
