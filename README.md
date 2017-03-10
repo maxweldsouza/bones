@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maxweldsouza/bones.svg?branch=master)](https://travis-ci.org/maxweldsouza/bones)
+
 ### Bones
 
 This is a skeleton react project.  
