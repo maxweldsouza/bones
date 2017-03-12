@@ -31,6 +31,7 @@
   "dependencies": {
     "css-loader": "^0.26.2",
     "cssnano": "^3.10.0",
+    "doiuse": "^2.5.0",
     "immutable": "^3.8.1",
     "postcss-scss": "^0.4.1",
     "precss": "^1.4.0",
