@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import styles from './App.scss';
+import styles from './App.css';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 import Footer from './Footer';

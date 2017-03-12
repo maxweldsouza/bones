@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import reducer from './reducers';
 import App from './components/App';
-import './index.scss';
+import './index.css';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(

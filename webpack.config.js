@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const syntax = require('postcss-scss');
 
 const extractSass = new ExtractTextPlugin({
     filename: '[name].css',
@@ -21,7 +22,8 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.scss$/,
+                test: /\.css$/,
+                exclude: /node_modules/,
                 use: extractSass.extract({
                     loader: [{
                         loader: 'css-loader', options: {
@@ -31,8 +33,9 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'sass-loader', options: {
-                            sourceMap: true
+                        loader: 'postcss-loader', options: {
+                            sourceMap: true,
+                            parser: syntax
                         }
                     }]
                 })
