@@ -10,6 +10,7 @@ Eslint
 Flow
 Jest
 PostCss
+Stylelint
 Sass
 Css Modules
 Webpack 2
