@@ -2,6 +2,8 @@
 module.exports = {
     plugins: [
         require('precss'),
-        require('autoprefixer')
+        require('stylelint'),
+        require('autoprefixer'),
+        require('cssnano')
     ]
 };

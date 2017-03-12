@@ -9,7 +9,7 @@ import Footer from './Footer';
 class App extends Component {
     render () {
         return (
-            <div className={styles.App}>
+            <div className={styles.app}>
                 <div className={styles.header}>
                     <img src={logo} className={styles.logo} alt="logo" />
                     <h2>Welcome to React !</h2>
