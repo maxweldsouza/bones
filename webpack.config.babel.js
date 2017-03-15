@@ -1,14 +1,14 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const syntax = require('postcss-scss');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import syntax from 'postcss-scss';
 
 const extractSass = new ExtractTextPlugin({
     filename: '[name].css',
     disable: false
 });
 
-module.exports = {
+export default {
     entry: './src/index.js',
     devtool: 'source-map',
     module: {

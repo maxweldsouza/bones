@@ -1,15 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const extractSass = new ExtractTextPlugin({
     filename: 'css/[name]-[contenthash:6].css',
     disable: false,
 });
 
-module.exports = {
+export default {
     entry: './src/index.js',
     devtool: 'source-map',
     module: {
